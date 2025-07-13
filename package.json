@@ -1,0 +1,53 @@
+{
+	"name": "ons",
+	"displayName": "Ons",
+	"description": "Ons theme for VSCode",
+	"licence": "MIT",
+	"publisher": "PolycraftLab",
+	"icon": "icon.png",
+	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/PolycraftLab/ons"
+	},
+	"engines": {
+		"vscode": "^1.43.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"keywords": [
+		"theme",
+		"dark"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Ons light",
+				"uiTheme": "vs",
+				"path": "./themes/ons-pallete-light.json"
+			},
+			{
+				"label": "Ons dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/ons-pallete-dark.json"
+			}
+		]
+	},
+	"scripts": {
+		"start": "nodemon --watch src src/index.js",
+		"build": "node src/index.js && mkdir -p build",
+		"release": "changeset publish",
+		"package": "vsce package -o ./build/ons-vscode-theme.vsix"
+	},
+	"bugs": {
+		"url": "https://github.com/PolycraftLab/ons/issues"
+	},
+	"homepage": "https://github.com/PolycraftLab/ons#readme",
+	"devDependencies": {
+		"nodemon": "^3.1.10"
+	},
+	"dependencies": {
+		"chroma-js": "^3.1.2"
+	}
+}
